@@ -1,0 +1,42 @@
+
+# Minerva (personal config + data)
+.minerva/
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets / credentials — never commit
+.env
+.env.*
+*.pem
+*.key
+service-account*.json
+gcp-credentials*.json
+application_default_credentials.json
+**/credentials.json
+
+# Generated data (regeneratable from source + scripts)
+data/enriched/*
+data/splits/*
+!data/enriched/.gitkeep
+!data/splits/.gitkeep
+
+# BQ extracts
+*.bq.json

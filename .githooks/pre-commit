@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Pre-commit hook: scan staged changes for secrets with gitleaks.
+# Block commit if any secret is detected.
+#
+# To enable in a fresh clone: `git config core.hooksPath .githooks`
+set -e
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "gitleaks not found. Install with: brew install gitleaks" >&2
+  exit 1
+fi
+
+gitleaks protect --staged --redact --verbose
