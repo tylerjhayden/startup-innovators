@@ -232,4 +232,4 @@ The lab is complete when:
 - **No formal test/holdout discipline:** the 80/20 split is for the prediction exercise, not statistical validation. Real models would cross-validate.
 - **Synthetic industry is uncorrelated with label:** per-industry prediction grouping is a workflow exercise, not a real insight.
 - **Source CSV has dirty data:** the cleaning step is a learning exercise, but mistakes there will silently degrade the model. README will include verification commands to catch issues early.
-- **Git not initialized:** project is not a git repo. Decision deferred — Chief to confirm whether to `git init` before implementation begins.
+- **Public repo, secret hygiene required:** repo lives at `github.com/tylerjhayden/startup-innovators` (MIT-licensed, public). Pre-commit hook runs `gitleaks` on staged changes. Service account keys never enter the repo — auth is via gcloud ADC. Source CSV is sample data, not real prospect intel.
